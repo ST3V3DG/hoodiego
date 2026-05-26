@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter, Raleway } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { NuqsAdapter } from 'nuqs/adapters/next/app';
 
 const ralewayHeading = Raleway({
   subsets: ["latin"],
@@ -33,7 +34,7 @@ export default function RootLayout({
       )}
     >
       <body className="min-h-full flex flex-col">
-        {children}
+        <NuqsAdapter>{children}</NuqsAdapter>
         <Analytics />
       </body>
     </html>

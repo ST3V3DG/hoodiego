@@ -2,6 +2,7 @@ import {
   RollRevealButton,
   RollRevealButtonText,
 } from "@/components/roll-reveal-button";
+import OrderConfigPanel from "@/components/ui/order-config-panel";
 
 export default function Hero() {
   return (
@@ -45,16 +46,18 @@ export default function Hero() {
             <div className="w-8 h-px bg-white/40 mb-6"></div>
             <p className="text-[10px] leading-relaxed text-gray-400 uppercase tracking-wider">
               Every hoodie is designed around your comfort, style, and everyday
-              life—so you can focus on what truly matters while looking your
+              life, so you can focus on what truly matters while looking your
               best.
             </p>
           </div>
 
           {/* Center Button */}
           <div className="flex justify-center mb-4">
-            <RollRevealButton>
-              <RollRevealButtonText text="Shop Now" />
-            </RollRevealButton>
+            <OrderConfigPanel>
+              <RollRevealButton>
+                <RollRevealButtonText text="Command" />
+              </RollRevealButton>
+            </OrderConfigPanel>
           </div>
 
           {/* Bottom Right Headline */}

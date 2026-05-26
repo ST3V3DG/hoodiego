@@ -30,20 +30,44 @@ export function Header() {
     <header className="w-full transition duration-300 bg-black lg:bg-transparent text-white overflow-hidden fixed top-0 z-50">
       {/* Navigation */}
       <nav className="flex justify-between items-center p-8 text-[10px] uppercase tracking-[0.2em]">
-        <div className="flex gap-8">
-          <Link href="#" className="hover:opacity-60 transition-opacity">
-            Collection
-          </Link>
-          <Link href="#" className="hover:opacity-60 transition-opacity">
-            New Arrivals
-          </Link>
-          <Link href="#" className="hover:opacity-60 transition-opacity">
-            Size Guide
-          </Link>
-          <Link href="#" className="hover:opacity-60 transition-opacity">
-            Contact
-          </Link>
-        </div>
+        <ul className="flex gap-8">
+          <li>
+            <Link href="/" className="hover:opacity-60 transition-opacity">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href="#" className="hover:opacity-60 transition-opacity">
+              Collection
+            </Link>
+          </li>
+          <li>
+            <Link href="#" className="hover:opacity-60 transition-opacity">
+              New Arrivals
+            </Link>
+          </li>
+          <li>
+            <Link href="#" className="hover:opacity-60 transition-opacity">
+              Size Guide
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/checkout"
+              className="hover:opacity-60 transition-opacity"
+            >
+              Checkout
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/contact"
+              className="hover:opacity-60 transition-opacity"
+            >
+              Contact
+            </Link>
+          </li>
+        </ul>
         {/*<div className="flex gap-8">
           <Link href="#" className="hover:opacity-60 transition-opacity">
             Cart (0)

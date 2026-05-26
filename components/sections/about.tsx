@@ -17,7 +17,7 @@ export function About() {
               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400">
                 Established 2024
               </span>
-              <div className="h-px w-12 bg-zinc-200" aria-hidden="true" />
+              <div className="h-px w-12 bg-zinc-200" />
               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-secondary">
                 About Us
               </span>
@@ -27,7 +27,7 @@ export function About() {
             </h2>
           </div>
           <div className="lg:col-span-4 pb-4">
-            <p className="text-zinc-500 text-lg text-pretty leading-relaxed">
+            <p className="text-primary-foreground text-lg text-pretty leading-relaxed">
               We specialize in creating hoodies that combine exceptional comfort
               and modern style, for garments that accompany you every day.
             </p>

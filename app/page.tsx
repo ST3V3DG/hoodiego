@@ -10,11 +10,13 @@ export default function Page() {
   return (
     <>
       <Header />
-      <Hero />
-      <Features />
-      <About />
-      <Stats />
-      <Testimonials />
+      <main>
+        <Hero />
+        <Features />
+        <About />
+        <Stats />
+        <Testimonials />
+      </main>
       <Footer />
     </>
   );

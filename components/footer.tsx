@@ -26,7 +26,7 @@ export function Footer() {
               </p>
               <address className="not-italic text-muted-foreground text-sm space-y-1">
                 <p>12 Fashion Street</p>
-                <p>75001 Street, Countre</p>
+                <p>75001 Street, City</p>
               </address>
             </div>
             <div>
@@ -62,7 +62,7 @@ export function Footer() {
               </span>
               <Button
                 variant="ghost"
-                className="text-xs font-bold uppercase tracking-widest hover:bg-primary rounded-sm transition-colors text-primary-foreground"
+                className="text-xs font-bold uppercase tracking-widest hover:bg-primary rounded-full transition-colors text-primary-foreground"
               >
                 Back to top ↑
               </Button>

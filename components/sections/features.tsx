@@ -53,7 +53,7 @@ const features: FeatureType[] = [
 export function Features() {
   return (
     <section className="py-32 bg-black px-6 relative min-h-screen">
-      <div className="absolute bottom-0 left-0 right-0 top-0 bg-[repeating-linear-gradient(45deg,#f3f3f3_0px_1px,transparent_1px_50px)] mask-[radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+      {/*<div className="absolute bottom-0 left-0 right-0 top-0 bg-[repeating-linear-gradient(45deg,#f3f3f3_0px_1px,transparent_1px_50px)] mask-[radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>*/}
 
       <div className="px-6 max-w-7xl mx-auto text-center relative">
         <motion.div
@@ -63,7 +63,7 @@ export function Features() {
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-primary mb-6 text-balance">
-            Why choose <br /> our hoodies?
+            Why choose our hoodies?
           </h1>
           <p className="text-lg text-primary-foreground max-w-2xl mx-auto mb-20 text-pretty">
             Discover what makes our hoodies unique. Quality, comfort and style
@@ -93,7 +93,7 @@ function FeatureCard({ icon: Icon, title, desc, highlight }: FeatureType) {
   return (
     <div
       className={cn(
-        "flex flex-col items-center group transition-all duration-200",
+        "flex flex-col items-center group bg-primary/20 border rounded-sm border-primary shadow-lg hover:shadow-xl transition-all duration-300 p-4",
         highlight && "md:scale-105",
       )}
     >

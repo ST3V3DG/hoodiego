@@ -14,7 +14,7 @@ export function Stats() {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-24 items-center ">
           <div className="space-y-10">
-            <span className="inline-flex px-4 py-1.5 text-xs font-semibold border border-zinc-800 rounded-full text-zinc-500 uppercase tracking-[0.2em] bg-zinc-900/50">
+            <span className="inline-flex px-4 py-1.5 text-xs font-semibold border border-zinc-800 rounded-full text-zinc-400 uppercase tracking-[0.2em] bg-zinc-900/50">
               By the numbers
             </span>
             <h2 className="text-6xl md:text-7xl font-bold tracking-tighter text-balance leading-none text-primary">
@@ -52,7 +52,7 @@ export function Stats() {
                 optimal comfort and modern style at accessible prices.
               </p>
               <div className="h-px w-20 bg-zinc-800" />
-              <p className="text-lg text-zinc-500 leading-relaxed text-pretty">
+              <p className="text-lg text-zinc-400 leading-relaxed text-pretty">
                 By analyzing the market, we noticed a lack of truly qualitative
                 hoodies. We created HoodieGo to meet this expectation with
                 essential products.
