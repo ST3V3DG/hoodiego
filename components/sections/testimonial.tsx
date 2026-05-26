@@ -51,7 +51,7 @@ export function Testimonials() {
     <section className="relative overflow-hidden py-32 bg-black">
       {/* Header */}
       <div className="max-w-7xl mx-auto px-6 mb-12 text-center">
-        <h2 className="text-5xl font-bold tracking-tight text-primary mb-4">
+        <h2 className="text-6xl md:text-7xl font-bold tracking-tight text-primary mb-4">
           They Trust Us
         </h2>
         <p className="text-lg text-primary-foreground max-w-2xl mx-auto">

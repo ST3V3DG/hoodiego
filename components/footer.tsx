@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { BackToTopButton } from "@/components/back-to-top-button";
 
 export function Footer() {
   return (
-    <footer className="w-full min-h-screen bg-black text-zinc-900 overflow-hidden border-t border-zinc-200 relative">
+    <footer className="w-full bg-black text-zinc-900 overflow-hidden border-t border-zinc-200 relative px-6">
       <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(125%_125%_at_50%_10%,rgba(255,255,255,0)_40%,var(--primary)_100%)] pointer-events-none"></div>
-      <div className="max-w-7xl mx-auto px-4 py-32 sm:px-6 lg:px-8 flex flex-col items-center">
+      <div className="max-w-7xl mx-auto py-32 sm:px-6 lg:px-8 flex flex-col items-center">
         <div className="w-full flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
           <div className="max-w-md">
             <h2 className="text-3xl font-bold tracking-tight text-pretty mb-6 text-primary-foreground">
@@ -49,7 +49,7 @@ export function Footer() {
         </div>
 
         <div className="relative w-full">
-          <h1 className="text-[12vw] font-black tracking-tighter text-primary select-none pointer-events-none leading-none -mb-[2vw]">
+          <h1 className="text-[12vw] font-bold tracking-tighter text-primary select-none pointer-events-none leading-none -mb-[2vw]">
             HoodieGo
           </h1>
           <div className="flex justify-between items-center border-t backdrop-blur border-zinc-200 pt-8 pb-6 relative z-10">
@@ -60,12 +60,7 @@ export function Footer() {
               <span className="text-xs  text-primary-foreground">
                 Made with ❤️ in Country
               </span>
-              <Button
-                variant="ghost"
-                className="text-xs font-bold uppercase tracking-widest hover:bg-primary rounded-full transition-colors text-primary-foreground"
-              >
-                Back to top ↑
-              </Button>
+              <BackToTopButton />
             </div>
           </div>
         </div>

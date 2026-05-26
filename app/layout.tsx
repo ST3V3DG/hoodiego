@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { Inter, Raleway } from "next/font/google";
 import "./globals.css";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
-import { cn } from "@/lib/utils";
 import { Suspense } from "react";
+import { cn } from "@/lib/utils";
 
 const ralewayHeading = Raleway({
   subsets: ["latin"],
@@ -26,6 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
+      data-scroll-behavior="smooth"
       lang="en"
       className={cn(
         "h-full",

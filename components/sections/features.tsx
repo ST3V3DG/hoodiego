@@ -55,16 +55,16 @@ export function Features() {
     <section className="py-32 bg-black px-6 relative min-h-screen">
       {/*<div className="absolute bottom-0 left-0 right-0 top-0 bg-[repeating-linear-gradient(45deg,#f3f3f3_0px_1px,transparent_1px_50px)] mask-[radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>*/}
 
-      <div className="px-6 max-w-7xl mx-auto text-center relative">
+      <div className="max-w-7xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, transform: "translateY(20px)" }}
           whileInView={{ opacity: 1, transform: "translateY(0)" }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-primary mb-6 text-balance">
+          <h2 className="text-6xl md:text-7xl font-bold tracking-tight text-primary mb-6 text-balance">
             Why choose our hoodies?
-          </h1>
+          </h2>
           <p className="text-lg text-primary-foreground max-w-2xl mx-auto mb-20 text-pretty">
             Discover what makes our hoodies unique. Quality, comfort and style
             for your everyday wardrobe.

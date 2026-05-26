@@ -34,7 +34,7 @@ export default function OrderConfigPanel({
   );
   return (
     <Sheet>
-      <SheetTrigger>{children}</SheetTrigger>
+      <SheetTrigger asChild>{children}</SheetTrigger>
       <SheetContent className="rounded-l-lg">
         <SheetHeader>
           <SheetTitle className="text-4xl text-primary font-bold">
@@ -42,7 +42,7 @@ export default function OrderConfigPanel({
           </SheetTitle>
           <SheetDescription>what will fit your need?</SheetDescription>
         </SheetHeader>
-        <div className="grow flex flex-col gap-6">
+        <div className="grow flex flex-col gap-6 overflow-y-scroll">
           <figure className="flex flex-col h-3/4 px-4">
             <Image
               src="/images/hoodie.webp"
@@ -169,6 +169,7 @@ export default function OrderConfigPanel({
                   defaultValue={quantity}
                   min={1}
                   value={quantity}
+                  readOnly
                   className="text-center w-20 border-none"
                 />
                 <Button

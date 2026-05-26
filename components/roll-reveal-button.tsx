@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 interface RollRevealContextProps {
@@ -35,15 +36,16 @@ export function RollRevealButton({
 
   return (
     <RollRevealContext.Provider value={{ hover, setHover }}>
-      <button
+      <Button
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         onClick={onClick}
         className={cn(
-          "relative w-fit overflow-hidden rounded-full  px-6 py-3 flex items-center gap-3 cursor-pointer select-none",
-          "transition-all duration-300 group active:scale-95",
+          "relative w-fit rounded-full  px-6 py-3 flex items-center gap-3 cursor-pointer select-none",
+          "transition-all duration-300 group active:scale-95 bg-transparent",
           className,
         )}
+        size="lg"
         type="button"
       >
         <div
@@ -56,7 +58,7 @@ export function RollRevealButton({
           {icon ?? <ChevronUpRightIcon />}
         </div>
         {children}
-      </button>
+      </Button>
     </RollRevealContext.Provider>
   );
 }
@@ -95,7 +97,7 @@ export function RollRevealButtonText({
   );
 }
 
-interface RollRevealButtonTextOverlayProps {
+type RollRevealButtonTextOverlayProps = {
   className?: string;
   text?: string;
   icon?: React.ReactNode;

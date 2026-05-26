@@ -14,15 +14,15 @@ export function About() {
               whileInView={{ opacity: 1, x: 0 }}
               className="flex items-center gap-4 mb-8"
             >
-              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400">
+              <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-zinc-400">
                 Established 2024
               </span>
               <div className="h-px w-12 bg-zinc-200" />
-              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-secondary">
+              <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">
                 About Us
               </span>
             </motion.div>
-            <h2 className="text-7xl md:text-9xl font-spaceGrotesk font-bold tracking-tighter leading-none text-balance text-primary">
+            <h2 className="text-6xl md:text-7xl font-spaceGrotesk font-bold tracking-tight leading-none text-balance text-primary">
               Confort <br /> <span className="italic">Premium</span>.
             </h2>
           </div>

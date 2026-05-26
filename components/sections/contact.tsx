@@ -41,15 +41,15 @@ export function Contact() {
               transition={{ duration: 0.5 }}
             >
               <div className="flex items-center gap-4 mb-8">
-                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400">
+                <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-zinc-400">
                   Get in Touch
                 </span>
                 <div className="h-px w-12 bg-zinc-200" />
-                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">
+                <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">
                   Contact
                 </span>
               </div>
-              <h2 className="text-6xl md:text-7xl font-bold tracking-tighter leading-none text-balance text-primary mb-6">
+              <h2 className="text-6xl md:text-7xl font-bold tracking-tight leading-none text-balance text-primary mb-6">
                 Let&apos;s <br />
                 <span className="italic">talk</span>.
               </h2>

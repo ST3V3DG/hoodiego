@@ -1,36 +1,41 @@
 "use client";
 
-import { CreditCard, Landmark } from "lucide-react";
+import { CheckCircle, CreditCard, Landmark } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
+import { useSearchParams } from 'next/navigation'
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 
-const cartItems = [
-  {
-    name: "HoodieGo Premium Hoodie",
-    size: "M",
-    color: "Black",
-    quantity: 1,
-    price: 25000,
-    image: "/images/hoodie.webp",
-  },
-];
-
-const subtotal = cartItems.reduce(
-  (sum, item) => sum + item.price * item.quantity,
-  0,
-);
-const shipping = 2500;
-const total = subtotal + shipping;
-
-function formatXAF(amount: number) {
-  return `${amount.toLocaleString()} XAF`;
-}
-
 export function Checkout() {
+  const searchParams = useSearchParams();
+
+  const quantity = searchParams.get('quantity');
+  const size = searchParams.get('size');
+  const color = searchParams.get('color');
+  
+  const cartItems = [
+    {
+      name: "HoodieGo Premium Hoodie",
+      price: 25000,
+      image: "/images/hoodie.webp",
+    },
+  ];
+  
+  const subtotal = cartItems.reduce(
+    (sum, item) => sum + item.price * parseInt(quantity ?? "1", 10),
+    0,
+  );
+  const shipping = 2500;
+  const total = subtotal + shipping;
+  
+  function formatXAF(amount: number) {
+    return `${amount.toLocaleString()} XAF`;
+  }
+  
   return (
     <section className="py-32 px-6 bg-black text-white min-h-screen">
       <div className="max-w-7xl mx-auto">
@@ -42,15 +47,15 @@ export function Checkout() {
           className="mb-16"
         >
           <div className="flex items-center gap-4 mb-8">
-            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400">
+            <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-zinc-400">
               Secure Checkout
             </span>
             <div className="h-px w-12 bg-zinc-200" />
-            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">
+            <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">
               Payment
             </span>
           </div>
-          <h1 className="text-6xl md:text-7xl font-bold tracking-tighter leading-none text-balance text-primary">
+          <h1 className="text-6xl md:text-7xl font-bold tracking-tight leading-none text-balance text-primary">
             Finalize Your <br />
             <span className="italic">Order</span>.
           </h1>
@@ -65,13 +70,13 @@ export function Checkout() {
               transition={{ duration: 0.5 }}
             >
               <h2 className="text-2xl font-bold tracking-tight text-primary mb-8 flex items-center gap-3">
-                <span className="size-8 rounded-full bg-primary text-black flex items-center justify-center text-sm font-black">
+                <span className="size-8 rounded-full bg-primary text-black flex items-center justify-center text-sm font-bold">
                   1
                 </span>
                 Shipping Information
               </h2>
 
-              <form onSubmit={(e) => e.preventDefault()} className="space-y-6">
+              <form onSubmit={(event) => event.preventDefault()} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label
@@ -181,17 +186,19 @@ export function Checkout() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <h2 className="text-2xl font-bold tracking-tight text-primary mb-8 flex items-center gap-3">
-                <span className="size-8 rounded-full bg-primary text-black flex items-center justify-center text-sm font-black">
+                <span className="size-8 rounded-full bg-primary text-black flex items-center justify-center text-sm font-bold">
                   2
                 </span>
                 Payment Method
               </h2>
 
               <div className="space-y-4">
-                <label className="flex items-center gap-4 p-4 rounded-sm border border-border bg-zinc-900 cursor-pointer hover:border-primary transition-colors has-checked:border-primary has-checked:bg-primary/10">
-                  <input
+                <label className="flex items-center gap-4 p-4 rounded-sm border border-border bg-zinc-900 cursor-pointer hover:border-primary transition-colors has-checked:border-primary has-checked:bg-primary/10"
+                  htmlFor="credit-card">
+                  <Input
                     type="radio"
                     name="payment"
+                    id="credit-card"
                     defaultChecked
                     className="size-4 accent-primary"
                   />
@@ -206,10 +213,12 @@ export function Checkout() {
                   </div>
                 </label>
 
-                <label className="flex items-center gap-4 p-4 rounded-sm border border-border bg-zinc-900 cursor-pointer hover:border-primary transition-colors has-checked:border-primary has-checked:bg-primary/10">
-                  <input
+                <label className="flex items-center gap-4 p-4 rounded-sm border border-border bg-zinc-900 cursor-pointer hover:border-primary transition-colors has-checked:border-primary has-checked:bg-primary/10"
+                  htmlFor="mobile-money">
+                  <Input
                     type="radio"
                     name="payment"
+                    id="mobile-money"
                     className="size-4 accent-primary"
                   />
                   <Landmark className="size-5 text-primary" />
@@ -234,6 +243,7 @@ export function Checkout() {
               <Button
                 type="button"
                 size="lg"
+                popoverTarget="order-placed-feedback"
                 className="w-full text-xs font-bold rounded-full uppercase tracking-[0.2em] py-6"
               >
                 Place Order — {formatXAF(total)}
@@ -263,23 +273,24 @@ export function Checkout() {
                     <Image
                       src={item.image}
                       alt={item.name}
-                      fill
-                      className="object-cover"
+                      className="object-cover size-full"
+                      width={200}
+                      height={200}
                     />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-white truncate">
                       {item.name}
                     </p>
-                    <p className="text-xs text-zinc-400 mt-1">
-                      {item.color} / {item.size}
+                    <p className="text-xs text-zinc-400 mt-1 uppercase">
+                      {color ?? "orange"} / {size ?? "l"}
                     </p>
                     <p className="text-xs text-zinc-400">
-                      Qty: {item.quantity}
+                      Qty: {parseInt(quantity ?? "1", 10)}
                     </p>
                   </div>
                   <p className="text-sm font-medium text-white shrink-0">
-                    {formatXAF(item.price * item.quantity)}
+                    {formatXAF(item.price * parseInt(quantity ?? "1", 10))}
                   </p>
                 </div>
               ))}
@@ -306,6 +317,14 @@ export function Checkout() {
             </motion.div>
           </div>
         </div>
+      </div>
+      <div id="order-placed-feedback" popover="auto" className="bg-zinc-900 border border-border rounded-sm p-8 gap-6 open:backdrop-blur-2xl backdrop:bg-black/80 open:top-1/2 open:left-1/2 transform open:-translate-x-1/2 open:-translate-y-1/2 w-full max-w-120 open:flex open:flex-col open:items-center">
+        <CheckCircle className="text-primary size-32" />
+        <h2 className="text-2xl font-bold text-primary tracking-tight">Order Placed Successfully!</h2>
+        <p className="text-sm text-zinc-400">Your order has been placed successfully. Thank you for shopping with us!</p>
+        <Link className="text-sm self-end underline text-white mt-8" href = '/'>
+          Go to Home
+        </Link>
       </div>
     </section>
   );

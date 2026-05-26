@@ -27,73 +27,67 @@ export function Header() {
   }, []);
 
   return (
-    <header className="w-full transition duration-300 bg-black lg:bg-transparent text-white overflow-hidden fixed top-0 z-50">
-      {/* Navigation */}
-      <nav className="flex justify-between items-center p-8 text-[10px] uppercase tracking-[0.2em]">
-        <ul className="flex gap-8">
-          <li>
-            <Link href="/" className="hover:opacity-60 transition-opacity">
-              Home
-            </Link>
-          </li>
-          <li>
+    <header className="w-full transition duration-300 bg-black lg:bg-transparent text-white overflow-hidden fixed top-0 z-50 p-6">
+      <div className="flex items-center justify-between mx-auto max-w-7xl">
+        <Link href="/" className="font-bold uppercase tracking-[0.2em] text-primary">HOODIEGO</Link>
+        
+        {/* Navigation */}
+        <nav className="flex justify-between items-center text-[10px] uppercase tracking-[0.2em]">
+          <ul className="flex gap-8">
+            <li>
+              <Link href="/" className="hover:opacity-60 transition-opacity">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="hover:opacity-60 transition-opacity">
+                Collection
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/checkout"
+                className="hover:opacity-60 transition-opacity"
+              >
+                Checkout
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/contact"
+                className="hover:opacity-60 transition-opacity"
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+          {/*<div className="flex gap-8">
             <Link href="#" className="hover:opacity-60 transition-opacity">
-              Collection
+              Cart (0)
             </Link>
-          </li>
-          <li>
             <Link href="#" className="hover:opacity-60 transition-opacity">
-              New Arrivals
+              Nouveautés
             </Link>
-          </li>
-          <li>
             <Link href="#" className="hover:opacity-60 transition-opacity">
-              Size Guide
+              Guide tailles
             </Link>
-          </li>
-          <li>
-            <Link
-              href="/checkout"
-              className="hover:opacity-60 transition-opacity"
-            >
-              Checkout
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/contact"
-              className="hover:opacity-60 transition-opacity"
-            >
+            <Link href="#" className="hover:opacity-60 transition-opacity">
               Contact
             </Link>
-          </li>
-        </ul>
-        {/*<div className="flex gap-8">
-          <Link href="#" className="hover:opacity-60 transition-opacity">
-            Cart (0)
-          </Link>
-          <Link href="#" className="hover:opacity-60 transition-opacity">
-            Nouveautés
-          </Link>
-          <Link href="#" className="hover:opacity-60 transition-opacity">
-            Guide tailles
-          </Link>
-          <Link href="#" className="hover:opacity-60 transition-opacity">
-            Contact
-          </Link>
-        </div>*/}
-        <div className="flex gap-8">
-          {/*<Link href="#" className="hover:opacity-60 transition-opacity">
-            Panier (0)
-          </Link>*/}
-          <Link
-            href="mailto:contact@hoodiego.store"
-            className="hover:opacity-60 transition-opacity"
-          >
-            contact@hoodiego.store
-          </Link>
-        </div>
-      </nav>
+          </div>*/}
+          {/*<div className="flex gap-8">
+            <Link href="#" className="hover:opacity-60 transition-opacity">
+              Panier (0)
+            </Link>
+            <Link
+              href="mailto:contact@hoodiego.store"
+              className="hover:opacity-60 transition-opacity"
+            >
+              contact@hoodiego.store
+            </Link>
+          </div>*/}
+        </nav>
+      </div>
     </header>
   );
 }

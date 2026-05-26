@@ -17,7 +17,7 @@ export function Stats() {
             <span className="inline-flex px-4 py-1.5 text-xs font-semibold border border-zinc-800 rounded-full text-zinc-400 uppercase tracking-[0.2em] bg-zinc-900/50">
               By the numbers
             </span>
-            <h2 className="text-6xl md:text-7xl font-bold tracking-tighter text-balance leading-none text-primary">
+            <h2 className="text-6xl md:text-7xl font-bold tracking-tight text-balance leading-none text-primary">
               HoodieGo <br />
               <span className="text-zinc-600">in numbers.</span>
             </h2>
