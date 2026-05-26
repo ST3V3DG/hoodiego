@@ -2,8 +2,8 @@ import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Inter, Raleway } from "next/font/google";
 import "./globals.css";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { cn } from "@/lib/utils";
-import { NuqsAdapter } from 'nuqs/adapters/next/app';
 
 const ralewayHeading = Raleway({
   subsets: ["latin"],
@@ -34,7 +34,13 @@ export default function RootLayout({
       )}
     >
       <body className="min-h-full flex flex-col">
-        <NuqsAdapter>{children}</NuqsAdapter>
+        <NuqsAdapter
+          defaultOptions={{
+            clearOnDefault: false,
+          }}
+        >
+          {children}
+        </NuqsAdapter>
         <Analytics />
       </body>
     </html>

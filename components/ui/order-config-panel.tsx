@@ -1,11 +1,13 @@
 "use client";
 
+import { Minus, Plus } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { parseAsInteger, parseAsString, useQueryState } from "nuqs";
 import type { ReactNode } from "react";
-import { useQueryState } from "nuqs";
-import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { parseAsInteger, parseAsString } from 'nuqs'
+import { Label } from "@/components/ui/label";
 import {
   Sheet,
   SheetContent,
@@ -15,18 +17,21 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
-import { Minus, Plus } from "lucide-react";
-import Link from "next/link";
 
 export default function OrderConfigPanel({
   children,
 }: {
   children: ReactNode;
 }) {
-  const [color, setColor] = useQueryState("color", parseAsString.withDefault("orange"));
+  const [color, setColor] = useQueryState(
+    "color",
+    parseAsString.withDefault("orange"),
+  );
   const [size, setSize] = useQueryState("size", parseAsString.withDefault("l"));
-  const [quantity, setQuantity] = useQueryState("quantity", parseAsInteger.withDefault(1));
+  const [quantity, setQuantity] = useQueryState(
+    "quantity",
+    parseAsInteger.withDefault(1),
+  );
   return (
     <Sheet>
       <SheetTrigger>{children}</SheetTrigger>
@@ -180,7 +185,9 @@ export default function OrderConfigPanel({
           </div>
         </div>
         <SheetFooter>
-          <Link href={`/checkout?color=${color}&size=${size}&quantity=${quantity}`}>
+          <Link
+            href={`/checkout?color=${color}&size=${size}&quantity=${quantity}`}
+          >
             <Button
               type="button"
               size="lg"
