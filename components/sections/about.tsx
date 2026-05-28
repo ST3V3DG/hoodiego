@@ -22,7 +22,7 @@ export function About() {
                 About Us
               </span>
             </motion.div>
-            <h2 className="text-6xl md:text-7xl font-spaceGrotesk font-bold tracking-tight leading-none text-balance text-primary">
+            <h2 className="text-6xl md:text-7xl font-bold tracking-tight leading-none text-balance text-primary">
               Confort <br /> <span className="italic">Premium</span>.
             </h2>
           </div>
@@ -62,7 +62,7 @@ export function About() {
 
           <div className="space-y-12 pt-24">
             <div className="max-w-md ml-auto text-right">
-              <h3 className="text-2xl font-bold mb-2 font-spaceGrotesk text-primary">
+              <h3 className="text-2xl font-bold mb-2 text-primary">
                 Urban Style
               </h3>
               <p className="text-zinc-400 text-sm leading-relaxed text-pretty">

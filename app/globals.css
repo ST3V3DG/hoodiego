@@ -8,7 +8,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-mono: var(--font-mono);
   --font-heading: var(--font-heading);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -49,6 +49,7 @@
 }
 
 :root {
+  interpolate-size: allow-keywords;
   --background: oklch(1 0 0);
   --foreground: oklch(0.147 0.004 49.25);
   --card: oklch(1 0 0);
@@ -127,8 +128,18 @@
   html {
     @apply font-sans;
   }
-
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
   ::selection {
     @apply bg-primary text-white;
+  }
+  details::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition: block-size 0.2s ease-in-out, content-visibility 0.2s ease-in-out allow-discrete;
+  }
+  details[open]::details-content {
+    block-size: auto;
   }
 }

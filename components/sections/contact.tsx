@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import Link from "next/link";
 
 const contactInfo = [
   {
@@ -68,12 +69,12 @@ export function Contact() {
               className="space-y-8"
             >
               {contactInfo.map((item) => (
-                <a
+                <Link
                   key={item.Label}
                   href={item.href}
                   className="flex items-center gap-4 group"
                 >
-                  <div className="size-12 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+                  <div className="size-12 rounded-sm bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
                     <item.icon className="size-5 text-primary" />
                   </div>
                   <div>
@@ -84,7 +85,7 @@ export function Contact() {
                       {item.value}
                     </p>
                   </div>
-                </a>
+                </Link>
               ))}
             </motion.div>
           </div>
@@ -95,7 +96,7 @@ export function Contact() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={(event) => event.preventDefault()}
               className="space-y-6"
             >
               <div className="grid sm:grid-cols-2 gap-6">
@@ -159,7 +160,7 @@ export function Contact() {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full sm:w-auto text-xs font-bold uppercase tracking-[0.2em] px-8 rounded-full"
+                className="w-full sm:w-auto text-xs font-bold uppercase tracking-[0.2em] px-8 rounded-sm"
               >
                 Send Message
               </Button>

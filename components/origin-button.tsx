@@ -1,14 +1,15 @@
 "use client";
+
 import React, { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-interface OriginContextProps {
+type OriginContextProps = {
   isHolding: boolean;
   setIsHolding: React.Dispatch<React.SetStateAction<boolean>>;
   direction: "0" | "100";
   setdirection: React.Dispatch<React.SetStateAction<"0" | "100">>;
-}
+};
 
 const OriginContext = React.createContext<OriginContextProps | undefined>(
   undefined,
@@ -22,13 +23,13 @@ const useOriginContext = () => {
   return context;
 };
 
-interface OriginButtonProps {
+type OriginButtonProps = {
   children?: React.ReactNode;
   className?: string;
   text?: string;
   icon?: React.ReactNode;
   onComplete?: () => void;
-}
+};
 
 export function OriginButton({
   children,
@@ -81,11 +82,11 @@ export function OriginButton({
   );
 }
 
-interface OriginButtonProps {
-  className?: string;
-  text?: string;
-  icon?: React.ReactNode;
-}
+// type OriginButtonProps = {
+//   className?: string;
+//   text?: string;
+//   icon?: React.ReactNode;
+// }
 
 export function OriginButtonOverlay({
   className,

@@ -16,7 +16,7 @@ export default function Hero() {
       >
         <source src="/videos/hero-video.mp4" type="video/mp4" />
       </video>
-      
+
       <div className="max-w-7xl mx-auto">
         {/* Main Content */}
         <div className="relative h-screen pb-12 flex flex-col justify-between">
@@ -26,14 +26,14 @@ export default function Hero() {
               We are comfort
             </h1>
           </div>
-  
+
           {/* Center Logo/Name */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
             <h2 className="text-2xl md:text-3xl tracking-[0.4em] font-light uppercase">
               HoodieGo
             </h2>
           </div>
-  
+
           {/* Bottom Section */}
           <div className="grid grid-cols-1 md:grid-cols-3 items-end gap-8">
             {/* Bottom Left Info */}
@@ -47,12 +47,12 @@ export default function Hero() {
               </h3>
               <div className="w-8 h-px bg-white/40 mb-6"></div>
               <p className="text-[10px] leading-relaxed text-gray-400 uppercase tracking-wider">
-                Every hoodie is designed around your comfort, style, and everyday
-                life, so you can focus on what truly matters while looking your
-                best.
+                Every hoodie is designed around your comfort, style, and
+                everyday life, so you can focus on what truly matters while
+                looking your best.
               </p>
             </div>
-  
+
             {/* Center Button */}
             <div className="flex justify-center mb-4">
               <OrderConfigPanel>
@@ -61,7 +61,7 @@ export default function Hero() {
                 </RollRevealButton>
               </OrderConfigPanel>
             </div>
-  
+
             {/* Bottom Right Headline */}
             <div className="text-right">
               <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-primary mix-blend-exclusion">
@@ -70,7 +70,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-  
+
         {/* Hero Footer / Scroll Indicator */}
         {/*<div className="p-8">
           <div className="border-t border-white/20 pt-4 flex justify-between items-center text-[9px] uppercase tracking-[0.3em] text-gray-500">

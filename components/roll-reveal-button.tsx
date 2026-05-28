@@ -4,10 +4,10 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-interface RollRevealContextProps {
+type RollRevealContextProps = {
   hover: boolean;
   setHover: React.Dispatch<React.SetStateAction<boolean>>;
-}
+};
 
 const RollRevealContext = React.createContext<
   RollRevealContextProps | undefined
@@ -101,7 +101,7 @@ type RollRevealButtonTextOverlayProps = {
   className?: string;
   text?: string;
   icon?: React.ReactNode;
-}
+};
 
 export function RollRevealButtonTextOverlay({
   className,

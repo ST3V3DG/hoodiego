@@ -4,19 +4,20 @@ import { CheckCircle, CreditCard, Landmark } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
+import { formatXAF } from "@/lib/utils";
 
 export function Checkout() {
   const searchParams = useSearchParams();
 
-  const quantity = searchParams.get('quantity');
-  const size = searchParams.get('size');
-  const color = searchParams.get('color');
-  
+  const quantity = searchParams.get("quantity");
+  const size = searchParams.get("size");
+  const color = searchParams.get("color");
+
   const cartItems = [
     {
       name: "HoodieGo Premium Hoodie",
@@ -24,18 +25,14 @@ export function Checkout() {
       image: "/images/hoodie.webp",
     },
   ];
-  
+
   const subtotal = cartItems.reduce(
     (sum, item) => sum + item.price * parseInt(quantity ?? "1", 10),
     0,
   );
   const shipping = 2500;
   const total = subtotal + shipping;
-  
-  function formatXAF(amount: number) {
-    return `${amount.toLocaleString()} XAF`;
-  }
-  
+
   return (
     <section className="py-32 px-6 bg-black text-white min-h-screen">
       <div className="max-w-7xl mx-auto">
@@ -76,7 +73,10 @@ export function Checkout() {
                 Shipping Information
               </h2>
 
-              <form onSubmit={(event) => event.preventDefault()} className="space-y-6">
+              <form
+                onSubmit={(event) => event.preventDefault()}
+                className="space-y-6"
+              >
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label
@@ -193,8 +193,10 @@ export function Checkout() {
               </h2>
 
               <div className="space-y-4">
-                <label className="flex items-center gap-4 p-4 rounded-sm border border-border bg-zinc-900 cursor-pointer hover:border-primary transition-colors has-checked:border-primary has-checked:bg-primary/10"
-                  htmlFor="credit-card">
+                <label
+                  className="flex items-center gap-4 p-4 rounded-sm border border-border bg-zinc-900 cursor-pointer hover:border-primary transition-colors has-checked:border-primary has-checked:bg-primary/10"
+                  htmlFor="credit-card"
+                >
                   <Input
                     type="radio"
                     name="payment"
@@ -213,8 +215,10 @@ export function Checkout() {
                   </div>
                 </label>
 
-                <label className="flex items-center gap-4 p-4 rounded-sm border border-border bg-zinc-900 cursor-pointer hover:border-primary transition-colors has-checked:border-primary has-checked:bg-primary/10"
-                  htmlFor="mobile-money">
+                <label
+                  className="flex items-center gap-4 p-4 rounded-sm border border-border bg-zinc-900 cursor-pointer hover:border-primary transition-colors has-checked:border-primary has-checked:bg-primary/10"
+                  htmlFor="mobile-money"
+                >
                   <Input
                     type="radio"
                     name="payment"
@@ -318,11 +322,20 @@ export function Checkout() {
           </div>
         </div>
       </div>
-      <div id="order-placed-feedback" popover="auto" className="bg-zinc-900 border border-border rounded-sm p-8 gap-6 open:backdrop-blur-2xl backdrop:bg-black/80 open:top-1/2 open:left-1/2 transform open:-translate-x-1/2 open:-translate-y-1/2 w-full max-w-120 open:flex open:flex-col open:items-center">
+      <div
+        id="order-placed-feedback"
+        popover="auto"
+        className="bg-zinc-900 border border-border rounded-sm p-8 gap-6 open:backdrop-blur-2xl backdrop:bg-black/80 open:top-1/2 open:left-1/2 transform open:-translate-x-1/2 open:-translate-y-1/2 w-full max-w-120 open:flex open:flex-col open:items-center"
+      >
         <CheckCircle className="text-primary size-32" />
-        <h2 className="text-2xl font-bold text-primary tracking-tight">Order Placed Successfully!</h2>
-        <p className="text-sm text-zinc-400">Your order has been placed successfully. Thank you for shopping with us!</p>
-        <Link className="text-sm self-end underline text-white mt-8" href = '/'>
+        <h2 className="text-2xl font-bold text-primary tracking-tight">
+          Order Placed Successfully!
+        </h2>
+        <p className="text-sm text-zinc-400">
+          Your order has been placed successfully. Thank you for shopping with
+          us!
+        </p>
+        <Link className="text-sm self-end underline text-white mt-8" href="/">
           Go to Home
         </Link>
       </div>

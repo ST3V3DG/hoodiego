@@ -29,8 +29,13 @@ export function Header() {
   return (
     <header className="w-full transition duration-300 bg-black lg:bg-transparent text-white overflow-hidden fixed top-0 z-50 p-6">
       <div className="flex items-center justify-between mx-auto max-w-7xl">
-        <Link href="/" className="font-bold uppercase tracking-[0.2em] text-primary">HOODIEGO</Link>
-        
+        <Link
+          href="/"
+          className="font-bold uppercase tracking-[0.2em] text-primary"
+        >
+          HOODIEGO
+        </Link>
+
         {/* Navigation */}
         <nav className="flex justify-between items-center text-[10px] uppercase tracking-[0.2em]">
           <ul className="flex gap-8">
@@ -40,8 +45,11 @@ export function Header() {
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:opacity-60 transition-opacity">
-                Collection
+              <Link
+                href="/collections"
+                className="hover:opacity-60 transition-opacity"
+              >
+                Collections
               </Link>
             </li>
             <li>
