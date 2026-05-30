@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { parseAsInteger, parseAsString, useQueryState } from "nuqs";
 import type { ReactNode } from "react";
+import { RadioColorSelector } from "@/components/radio-color-selector";
+import { RadioSizeSelector } from "@/components/radio-size-selector";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -57,90 +59,56 @@ export default function OrderConfigPanel({
             <div className="space-y-1">
               <h2 className="text-sm text-muted-foreground">Color</h2>
               <div className="flex gap-4">
-                <div className="size-11 rounded-full overflow-hidden relative transition-colors duration-300">
-                  <Label className="bg-orange-600 size-full" htmlFor="orange">
-                    <span className="sr-only">Orange</span>
-                  </Label>
-                  <Input
-                    id="orange"
-                    type="radio"
-                    name="color"
-                    value="orange"
-                    checked={color === "orange"}
-                    onChange={() => setColor("orange")}
-                    className="accent-orange-600 not-checked:invisible absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                  />
-                </div>
-                <div className="size-11 rounded-full overflow-hidden relative transition-colors duration-300">
-                  <Label className="bg-black size-full" htmlFor="black">
-                    <span className="sr-only">Black</span>
-                  </Label>
-                  <Input
-                    id="black"
-                    type="radio"
-                    name="color"
-                    value="black"
-                    checked={color === "black"}
-                    onChange={() => setColor("black")}
-                    className="accent-black not-checked:invisible absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                  />
-                </div>
+                <RadioColorSelector
+                  id="black"
+                  name="color"
+                  color={"#000000"}
+                  onChange={setColor}
+                  label="Black"
+                  matchColor="black"
+                  className="size-11"
+                />
+                <RadioColorSelector
+                  id="orange"
+                  name="color"
+                  color={"#ff6c00"}
+                  onChange={setColor}
+                  label="Orange"
+                  matchColor="orange"
+                  className="size-11"
+                />
               </div>
             </div>
             <div className="space-y-1">
               <h2 className="text-sm text-muted-foreground">Size</h2>
               <div className="flex gap-4">
-                <div className="size-11 rounded-lg overflow-hidden relative transition-colors duration-300 has-checked:border has-checked:bg-primary/20 border-primary">
-                  <Label
-                    className="size-full flex place-items-center"
-                    htmlFor="l"
-                  >
-                    <span className="mx-auto">L</span>
-                  </Label>
-                  <Input
-                    id="l"
-                    type="radio"
-                    name="size"
-                    value="l"
-                    checked={size === "l"}
-                    onChange={() => setSize("l")}
-                    className="opacity-0 not-checked:invisible absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                  />
-                </div>
-                <div className="size-11 rounded-lg overflow-hidden relative transition-colors duration-300 has-checked:border has-checked:bg-primary/20 border-primary">
-                  <Label
-                    className="size-full flex place-items-center"
-                    htmlFor="xl"
-                  >
-                    <span className="mx-auto">XL</span>
-                  </Label>
-                  <Input
-                    id="xl"
-                    type="radio"
-                    name="size"
-                    value="xl"
-                    checked={size === "xl"}
-                    onChange={() => setSize("xl")}
-                    className="opacity-0 not-checked:invisible absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                  />
-                </div>
-                <div className="size-11 rounded-lg overflow-hidden relative transition-colors duration-300 has-checked:border has-checked:bg-primary/20 border-primary">
-                  <Label
-                    className="size-full flex place-items-center"
-                    htmlFor="xxl"
-                  >
-                    <span className="mx-auto">XXL</span>
-                  </Label>
-                  <Input
-                    id="xxl"
-                    type="radio"
-                    name="size"
-                    value="xxl"
-                    checked={size === "xxl"}
-                    onChange={() => setSize("xxl")}
-                    className="opacity-0 not-checked:invisible absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                  />
-                </div>
+                <RadioSizeSelector
+                  id="l"
+                  name="size"
+                  size="l"
+                  matchSize={size}
+                  onChange={setSize}
+                  label="L"
+                  className="size-11"
+                />
+                <RadioSizeSelector
+                  id="xl"
+                  name="size"
+                  size="xl"
+                  matchSize={size}
+                  onChange={setSize}
+                  label="XL"
+                  className="size-11"
+                />
+                <RadioSizeSelector
+                  id="xxl"
+                  name="size"
+                  size="xxl"
+                  matchSize={size}
+                  onChange={setSize}
+                  label="XXL"
+                  className="size-11"
+                />
               </div>
             </div>
             <div className="space-y-1">

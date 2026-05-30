@@ -3,76 +3,86 @@
 import { ChevronDown } from "lucide-react";
 import { motion } from "motion/react";
 import { type Product2, ProductCard2 } from "@/components/product-card-2";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 const products: Product2[] = [
   {
     title: "Classic Black Hoodie",
     image: "/images/hoodie.webp",
-    price: "25 000 XAF",
+    price: 25000,
     badge: "Best Seller",
+    type: "full-zip",
     rating: 5,
     colors: ["#000000", "#ffffff", "#cc0000"],
   },
   {
     title: "Urban Grey Hoodie",
     image: "/images/hoodie-on-model.webp",
-    price: "22 000 XAF",
+    price: 22000,
     badge: "New Season",
+    type: "pullover",
     rating: 4,
     colors: ["#808080", "#000000", "#1a3a5c"],
   },
   {
     title: "Navy Blue Crewneck",
     image: "/images/hoodie.webp",
-    price: "20 000 XAF",
+    price: 20000,
     badge: "Sale",
+    type: "crewneck",
     rating: 4,
     colors: ["#1a3a5c", "#ffffff"],
   },
   {
     title: "White Premium Hoodie",
     image: "/images/hoodie-on-model.webp",
-    price: "28 000 XAF",
+    price: 28000,
     badge: "Premium",
+    type: "lightweight",
     rating: 5,
     colors: ["#ffffff", "#000000", "#cc0000"],
   },
   {
     title: "Olive Green Zip-Up",
     image: "/images/hoodie.webp",
-    price: "26 000 XAF",
+    price: 26000,
     badge: "New Season",
+    type: "zip-up",
     rating: 4,
     colors: ["#556b2f", "#000000"],
   },
   {
     title: "Burgundy Pullover",
     image: "/images/hoodie-on-model.webp",
-    price: "23 000 XAF",
+    price: 23000,
     badge: "Trending",
+    type: "oversized",
     rating: 5,
     colors: ["#800020", "#ffffff", "#000000"],
   },
   {
     title: "Charcoal Heavy Knit",
     image: "/images/hoodie.webp",
-    price: "27 000 XAF",
+    price: 27000,
     badge: "Best Seller",
+    type: "heavyweight",
     rating: 4,
     colors: ["#36454f", "#808080"],
   },
   {
     title: "Cream Oversized Hoodie",
     image: "/images/hoodie-on-model.webp",
-    price: "24 000 XAF",
+    price: 24000,
     badge: "Limited",
+    type: "oversized",
     rating: 5,
     colors: ["#f5f5dc", "#000000"],
   },
 ];
 
-const categories = ["All", "Hoodies", "Crewnecks", "Zip-Ups", "Limited"];
+export const categories = ["all", "oversized", "crewnecks", "zip-ups", "lightweight", "heavyweight"];
 
 export function Collections() {
   return (
@@ -110,12 +120,15 @@ export function Collections() {
           <div className="flex flex-wrap gap-2">
             {categories.map((category) => (
               <Button
+                asChild
                 key={category}
                 type="button"
                 variant="ghost"
-                className="px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] rounded-sm border border-zinc-800 text-zinc-400 hover:border-primary hover:text-primary transition-colors cursor-pointer"
+                className="px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] rounded-sm border border-zinc-800 text-zinc-400 has-checked:border-primary has-checked:text-primary transition-colors cursor-pointer"
               >
-                {category}
+                <Label htmlFor={`category-${category}`}>{category}
+                <Input className="hidden" id={`category-${category}`} name="category" type="radio" value={category.toLowerCase()} />
+                </Label>
               </Button>
             ))}
           </div>

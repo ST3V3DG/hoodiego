@@ -2,7 +2,7 @@ import {
   RollRevealButton,
   RollRevealButtonText,
 } from "@/components/roll-reveal-button";
-import OrderConfigPanel from "@/components/ui/order-config-panel";
+import OrderConfigPanel from "@/components/order-config-panel";
 
 export default function Hero() {
   return (
