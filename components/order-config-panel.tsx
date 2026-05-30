@@ -9,7 +9,6 @@ import { RadioColorSelector } from "@/components/radio-color-selector";
 import { RadioSizeSelector } from "@/components/radio-size-selector";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
   Sheet,
   SheetContent,
@@ -27,7 +26,7 @@ export default function OrderConfigPanel({
 }) {
   const [color, setColor] = useQueryState(
     "color",
-    parseAsString.withDefault("orange"),
+    parseAsString.withDefault("#ff6c00"),
   );
   const [size, setSize] = useQueryState("size", parseAsString.withDefault("l"));
   const [quantity, setQuantity] = useQueryState(
@@ -62,8 +61,8 @@ export default function OrderConfigPanel({
                 <RadioColorSelector
                   id="black"
                   name="color"
-                  color={"#000000"}
-                  onChange={setColor}
+                  color="#000000"
+                  onClick={setColor}
                   label="Black"
                   matchColor="#000000"
                   className="size-11"
@@ -71,8 +70,8 @@ export default function OrderConfigPanel({
                 <RadioColorSelector
                   id="orange"
                   name="color"
-                  color={"#ff6c00"}
-                  onChange={setColor}
+                  color="#ff6c00"
+                  onClick={setColor}
                   label="Orange"
                   matchColor="#ff6c00"
                   className="size-11"
@@ -87,7 +86,7 @@ export default function OrderConfigPanel({
                   name="size"
                   size="l"
                   matchSize={size}
-                  onChange={setSize}
+                  onClick={setSize}
                   label="L"
                   className="size-11"
                 />
@@ -96,7 +95,7 @@ export default function OrderConfigPanel({
                   name="size"
                   size="xl"
                   matchSize={size}
-                  onChange={setSize}
+                  onClick={setSize}
                   label="XL"
                   className="size-11"
                 />
@@ -105,19 +104,18 @@ export default function OrderConfigPanel({
                   name="size"
                   size="xxl"
                   matchSize={size}
-                  onChange={setSize}
+                  onClick={setSize}
                   label="XXL"
                   className="size-11"
                 />
               </div>
             </div>
             <div className="space-y-1">
-              <Label
-                htmlFor="quantity"
+              <h2
                 className="text-sm text-muted-foreground"
               >
                 Quantity Input
-              </Label>
+              </h2>
               <div className="flex items-center gap-1">
                 <Button
                   type="button"
@@ -134,7 +132,6 @@ export default function OrderConfigPanel({
                 <Input
                   id="quantity"
                   type="number"
-                  defaultValue={quantity}
                   min={1}
                   value={quantity}
                   readOnly

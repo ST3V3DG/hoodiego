@@ -10,7 +10,7 @@ export function RadioColorSelector({
   className,
   label,
   matchColor,
-  onChange,
+  onClick,
   size = "default",
 }: {
   id: string;
@@ -19,7 +19,7 @@ export function RadioColorSelector({
   className?: string;
   label: string;
   matchColor?: string;
-  onChange?: (color: string) => void;
+  onClick?: (color: string) => void;
   size?:
     | "default"
     | "sm"
@@ -29,13 +29,15 @@ export function RadioColorSelector({
     | "icon-xs"
     | "icon-sm"
     | "icon-lg";
-}) {
+  }) {
+  
   return (
     <Button
       variant="ghost"
       className={cn("p-0 rounded-full overflow-hidden relative", className)}
       type="button"
       size={size}
+      onClick={() => (onClick ? onClick(color) : undefined)}
     >
       <Label
         className="size-full cursor-pointer"
@@ -48,8 +50,7 @@ export function RadioColorSelector({
           type="radio"
           name={name}
           value={color}
-          checked={matchColor ? color === matchColor : undefined}
-          onChange={() => (onChange ? onChange(color) : undefined)}
+          defaultChecked={matchColor ? color === matchColor : undefined}
           className="not-checked:invisible absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer size-full transition-colors duration-300"
           style={{ accentColor: color }}
         />
