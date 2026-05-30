@@ -128,7 +128,12 @@
   html {
     @apply font-sans;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading;
   }
   ::selection {
@@ -137,7 +142,9 @@
   details::details-content {
     block-size: 0;
     overflow: hidden;
-    transition: block-size 0.2s ease-in-out, content-visibility 0.2s ease-in-out allow-discrete;
+    transition:
+      block-size 0.2s ease-in-out,
+      content-visibility 0.2s ease-in-out allow-discrete;
   }
   details[open]::details-content {
     block-size: auto;

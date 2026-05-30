@@ -12,7 +12,7 @@ export type Product2 = {
   price: number;
   badge: string;
   rating: number;
-  type: typeof categories[number];
+  type: (typeof categories)[number];
   colors?: string[];
 };
 
@@ -34,7 +34,14 @@ export function ProductCard2({ product }: { product: Product2 }) {
         </Badge>
         <div className="absolute inset-s-3 bottom-3 flex items-center justify-between gap-2">
           {product.colors?.map((color, _) => (
-            <RadioColorSelector key={`${product.title.toLowerCase()}-${color}`} className="size-6" id={`${product.title.toLowerCase()}-${color}`} name={product.title.toLowerCase().replace(/\s+/g, "-")} color={color} label={`${product.title.toLowerCase()}-${color}`} />
+            <RadioColorSelector
+              key={`${product.title.toLowerCase()}-${color}`}
+              className="size-6"
+              id={`${product.title.toLowerCase()}-${color}`}
+              name={product.title.toLowerCase().replace(/\s+/g, "-")}
+              color={color}
+              label={`${product.title.toLowerCase()}-${color}`}
+            />
           ))}
         </div>
       </figure>

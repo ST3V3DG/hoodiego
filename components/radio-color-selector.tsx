@@ -20,7 +20,15 @@ export function RadioColorSelector({
   label: string;
   matchColor?: string;
   onChange?: (color: string) => void;
-  size?: "default" | "sm" | "lg" | "xs" | "icon" | "icon-xs" | "icon-sm" | "icon-lg";
+  size?:
+    | "default"
+    | "sm"
+    | "lg"
+    | "xs"
+    | "icon"
+    | "icon-xs"
+    | "icon-sm"
+    | "icon-lg";
 }) {
   return (
     <Button
@@ -35,16 +43,16 @@ export function RadioColorSelector({
         style={{ backgroundColor: color }}
       >
         <span className="sr-only">{label}</span>
-      <Input
-        id={id}
-        type="radio"
-        name={name}
-        value={color}
-        checked={ matchColor ? color === matchColor : undefined}
-        onChange={() => onChange ? onChange(color) : undefined}
-        className="not-checked:invisible absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer size-full transition-colors duration-300"
-        style={{ accentColor: color }}
-      />
+        <Input
+          id={id}
+          type="radio"
+          name={name}
+          value={color}
+          checked={matchColor ? color === matchColor : undefined}
+          onChange={() => (onChange ? onChange(color) : undefined)}
+          className="not-checked:invisible absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer size-full transition-colors duration-300"
+          style={{ accentColor: color }}
+        />
       </Label>
     </Button>
   );

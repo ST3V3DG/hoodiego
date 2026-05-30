@@ -82,7 +82,14 @@ const products: Product2[] = [
   },
 ];
 
-export const categories = ["all", "oversized", "crewnecks", "zip-ups", "lightweight", "heavyweight"];
+export const categories = [
+  "all",
+  "oversized",
+  "crewnecks",
+  "zip-ups",
+  "lightweight",
+  "heavyweight",
+];
 
 export function Collections() {
   return (
@@ -126,8 +133,15 @@ export function Collections() {
                 variant="ghost"
                 className="px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] rounded-sm border border-zinc-800 text-zinc-400 has-checked:border-primary has-checked:text-primary transition-colors cursor-pointer"
               >
-                <Label htmlFor={`category-${category}`}>{category}
-                <Input className="hidden" id={`category-${category}`} name="category" type="radio" value={category.toLowerCase()} />
+                <Label htmlFor={`category-${category}`}>
+                  {category}
+                  <Input
+                    className="hidden"
+                    id={`category-${category}`}
+                    name="category"
+                    type="radio"
+                    value={category.toLowerCase()}
+                  />
                 </Label>
               </Button>
             ))}
