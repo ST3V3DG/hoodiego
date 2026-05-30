@@ -65,7 +65,7 @@ export default function OrderConfigPanel({
                   color={"#000000"}
                   onChange={setColor}
                   label="Black"
-                  matchColor="black"
+                  matchColor="#000000"
                   className="size-11"
                 />
                 <RadioColorSelector
@@ -74,7 +74,7 @@ export default function OrderConfigPanel({
                   color={"#ff6c00"}
                   onChange={setColor}
                   label="Orange"
-                  matchColor="orange"
+                  matchColor="#ff6c00"
                   className="size-11"
                 />
               </div>
