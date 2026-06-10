@@ -14,11 +14,21 @@ export function Header({ className }: { className?: string }) {
       const header = document.querySelector("header");
       if (header) {
         if (window.scrollY > 50) {
-          header.classList.add("bg-background", "shadow", "dark:shadow-none", "[&_ul_a]:mix-blend-difference");
+          header.classList.add(
+            "bg-background",
+            "shadow",
+            "dark:shadow-none",
+            "[&_ul_a]:mix-blend-difference",
+          );
           header.classList.remove("lg:bg-transparent");
         } else {
           header.classList.add("lg:bg-transparent");
-          header.classList.remove("bg-background", "shadow", "dark:shadow-none", "[&_ul_a]:mix-blend-difference");
+          header.classList.remove(
+            "bg-background",
+            "shadow",
+            "dark:shadow-none",
+            "[&_ul_a]:mix-blend-difference",
+          );
         }
       }
     };
@@ -29,7 +39,12 @@ export function Header({ className }: { className?: string }) {
   }, []);
 
   return (
-    <header className={cn("w-full transition duration-300 bg-background lg:bg-transparent text-white overflow-hidden fixed top-0 z-50 p-6", className)}>
+    <header
+      className={cn(
+        "w-full transition duration-300 bg-background lg:bg-transparent text-white overflow-hidden fixed top-0 z-50 p-6",
+        className,
+      )}
+    >
       <div className="flex items-center justify-between mx-auto max-w-7xl">
         <Link
           href="/"

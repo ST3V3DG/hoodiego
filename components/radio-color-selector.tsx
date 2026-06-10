@@ -29,8 +29,7 @@ export function RadioColorSelector({
     | "icon-xs"
     | "icon-sm"
     | "icon-lg";
-  }) {
-  
+}) {
   return (
     <Button
       variant="ghost"

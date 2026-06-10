@@ -3,7 +3,12 @@
 import { Minus, Plus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { createSerializer, parseAsInteger, parseAsString, useQueryState } from "nuqs";
+import {
+  createSerializer,
+  parseAsInteger,
+  parseAsString,
+  useQueryState,
+} from "nuqs";
 import type { ReactNode } from "react";
 import { RadioColorSelector } from "@/components/radio-color-selector";
 import { RadioSizeSelector } from "@/components/radio-size-selector";
@@ -38,7 +43,7 @@ export default function OrderConfigPanel({
     size: parseAsString,
     quantity: parseAsInteger,
   });
-  
+
   return (
     <Sheet>
       <SheetTrigger asChild>{children}</SheetTrigger>
@@ -117,11 +122,7 @@ export default function OrderConfigPanel({
               </div>
             </div>
             <div className="space-y-1">
-              <h2
-                className="text-sm text-zinc-400"
-              >
-                Quantity Input
-              </h2>
+              <h2 className="text-sm text-zinc-400">Quantity Input</h2>
               <div className="flex items-center gap-1">
                 <Button
                   type="button"
@@ -157,9 +158,7 @@ export default function OrderConfigPanel({
           </div>
         </div>
         <SheetFooter>
-          <Link
-            href={`/checkout${serializer({ color, size, quantity })}`}
-          >
+          <Link href={`/checkout${serializer({ color, size, quantity })}`}>
             <Button
               type="button"
               size="lg"

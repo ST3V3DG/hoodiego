@@ -4,7 +4,12 @@ import { RadioColorSelector } from "@/components/radio-color-selector";
 import type { categories } from "@/components/sections/collections";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
 import { formatXAF } from "@/lib/utils";
 
 export type Product2 = {
@@ -66,9 +71,7 @@ export function ProductCard2({ product }: { product: Product2 }) {
                   <Star key={index} className="text-zinc-400 size-4" />
                 ),
               )}
-            <span className="text-zinc-400 ms-1 text-xs">
-              (4.5 out of 5)
-            </span>
+            <span className="text-zinc-400 ms-1 text-xs">(4.5 out of 5)</span>
           </div>
         </div>
       </CardContent>
