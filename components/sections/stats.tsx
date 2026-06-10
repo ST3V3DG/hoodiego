@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "motion/react";
+import { Badge } from "@/components/ui/badge";
 
 const stats = [
   { label: "Established", value: "2024" },
@@ -10,13 +11,13 @@ const stats = [
 
 export function Stats() {
   return (
-    <section className="py-32 px-6 bg-black text-white min-h-screen">
+    <section className="py-32 px-6 bg-background min-h-screen">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-24 items-center ">
+        <div className="grid lg:grid-cols-2 gap-24 items-center">
           <div className="space-y-10">
-            <span className="inline-flex px-4 py-1.5 text-xs font-semibold border border-zinc-800 rounded-full text-zinc-400 uppercase tracking-[0.2em] bg-zinc-900/50">
+            <Badge className="p-4 uppercase tracking-[0.2em] text-zinc-400 border border-zinc-800 rounded-full bg-background">
               By the numbers
-            </span>
+            </Badge>
             <h2 className="text-6xl md:text-7xl font-bold tracking-tight text-balance leading-none text-primary">
               HoodieGo <br />
               <span className="text-zinc-600">in numbers.</span>
@@ -37,7 +38,7 @@ export function Stats() {
                   <div className="text-5xl font-semibold mb-2 tracking-tighter">
                     {stat.value}
                   </div>
-                  <div className="text-sm font-medium text-zinc-500 uppercase tracking-widest">
+                  <div className="text-sm font-medium text-primary uppercase tracking-widest">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -47,12 +48,12 @@ export function Stats() {
 
           <div>
             <div className="space-y-8 relative z-10">
-              <p className="text-xl md:text-2xl text-zinc-400 leading-relaxed text-pretty font-medium">
+              <p className="text-xl md:text-2xl text-zinc-900 dark:text-white leading-relaxed text-pretty font-medium">
                 We identified a demand for hoodies that combine premium quality,
                 optimal comfort and modern style at accessible prices.
               </p>
               <div className="h-px w-20 bg-zinc-800" />
-              <p className="text-lg text-zinc-400 leading-relaxed text-pretty">
+              <p className="text-lg text-zinc-900 dark:text-white leading-relaxed text-pretty">
                 By analyzing the market, we noticed a lack of truly qualitative
                 hoodies. We created HoodieGo to meet this expectation with
                 essential products.

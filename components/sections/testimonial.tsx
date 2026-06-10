@@ -48,20 +48,20 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="relative overflow-hidden py-32 bg-black">
+    <section className="relative overflow-hidden py-32 bg-background">
       {/* Header */}
       <div className="max-w-7xl mx-auto px-6 mb-12 text-center">
         <h2 className="text-6xl md:text-7xl font-bold tracking-tight text-primary mb-4">
           They Trust Us
         </h2>
-        <p className="text-lg text-primary-foreground max-w-2xl mx-auto">
+        <p className="text-base text-zinc-900 max-w-xl mx-auto">
           Discover what our customers say about their HoodieGo hoodies
         </p>
       </div>
 
       {/* Gradient fades */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-linear-to-r from-black to-transparent z-10" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-linear-to-l from-black to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-linear-to-r from-white dark:from-background to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-linear-to-l from-white dark:from-background to-transparent z-10" />
 
       <motion.div
         className="flex gap-6 px-6 w-max"
@@ -93,7 +93,7 @@ export function Testimonials() {
             </div>
 
             {/* Testimonial text */}
-            <p className="text-primary-foreground leading-relaxed text-pretty font-medium">
+            <p className="text-zinc-900 dark:text-white leading-relaxed text-pretty font-medium">
               {testimonial.text}
             </p>
 
@@ -104,7 +104,7 @@ export function Testimonials() {
               </div>
               <div className="flex-1">
                 <p className="font-semibold text-primary">{testimonial.name}</p>
-                <p className="text-sm text-zinc-200">{testimonial.role}</p>
+                <p className="text-sm text-zinc-400">{testimonial.role}</p>
                 <p className="text-xs text-zinc-400">{testimonial.company}</p>
               </div>
             </div>
@@ -143,7 +143,7 @@ export function Testimonials() {
             </div>
 
             {/* Testimonial text */}
-            <p className="text-primary-foreground leading-relaxed text-pretty font-medium">
+            <p className="text-zinc-900 dark:text-white leading-relaxed text-pretty font-medium">
               {testimonial.text}
             </p>
 
@@ -154,7 +154,7 @@ export function Testimonials() {
               </div>
               <div className="flex-1">
                 <p className="font-semibold text-primary">{testimonial.name}</p>
-                <p className="text-sm text-zinc-200">{testimonial.role}</p>
+                <p className="text-sm text-zinc-400">{testimonial.role}</p>
                 <p className="text-xs text-zinc-400">{testimonial.company}</p>
               </div>
             </div>

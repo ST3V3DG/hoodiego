@@ -5,7 +5,7 @@ import { Collections } from "@/components/sections/collections";
 export default function Page() {
   return (
     <>
-      <Header />
+      <Header className="text-zinc-900" />
       <main>
         <Collections />
       </main>

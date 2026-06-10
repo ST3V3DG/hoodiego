@@ -6,7 +6,7 @@ import {
 
 export default function Hero() {
   return (
-    <section className="min-h-screen bg-black text-white relative px-6">
+    <section className="min-h-screen text-white relative px-6">
       <video
         autoPlay
         muted
@@ -46,7 +46,7 @@ export default function Hero() {
                 redefined
               </h3>
               <div className="w-8 h-px bg-white/40 mb-6"></div>
-              <p className="text-[10px] leading-relaxed text-gray-400 uppercase tracking-wider">
+              <p className="text-[10px] leading-relaxed text-zinc-400 uppercase tracking-wider">
                 Every hoodie is designed around your comfort, style, and
                 everyday life, so you can focus on what truly matters while
                 looking your best.

@@ -109,6 +109,7 @@ export function RollRevealButtonTextOverlay({
   icon,
 }: RollRevealButtonTextOverlayProps) {
   const { hover } = useRollRevealContext();
+  
   return (
     <div
       className={cn(

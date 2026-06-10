@@ -93,7 +93,7 @@ export const categories = [
 
 export function Collections() {
   return (
-    <section className="py-32 px-6 bg-black text-white min-h-screen">
+    <section className="py-32 px-6 bg-background min-h-screen">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -131,7 +131,7 @@ export function Collections() {
                 key={category}
                 type="button"
                 variant="ghost"
-                className="px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] rounded-sm border border-zinc-800 text-zinc-400 has-checked:border-primary has-checked:text-primary transition-colors cursor-pointer"
+                className="px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] rounded-sm border border-zinc-800 dark:text-zinc-400 has-checked:border-primary has-checked:text-primary transition-colors cursor-pointer"
               >
                 <Label htmlFor={`category-${category}`}>
                   {category}
@@ -148,7 +148,7 @@ export function Collections() {
           </div>
 
           <div className="relative">
-            <select className="appearance-none bg-zinc-900 border border-zinc-800 text-white text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-2 pr-8 rounded-sm cursor-pointer focus-visible:border-primary focus-visible:outline-none">
+            <select className="appearance-none dark:bg-zinc-900 border border-zinc-800 dark:text-white text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-2 pr-8 rounded-sm cursor-pointer focus-visible:border-primary focus-visible:outline-none">
               <option>Newest</option>
               <option>Price: Low to High</option>
               <option>Price: High to Low</option>

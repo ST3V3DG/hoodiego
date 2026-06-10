@@ -32,7 +32,7 @@ export function ProductCard({ product }: { product: Product }) {
       </figure>
       <div className="mt-3 space-y-0.5">
         <p className="font-medium">{product.title}</p>
-        <p className="text-muted-foreground">{product.price}</p>
+        <p className="text-zinc-400">{product.price}</p>
       </div>
     </Link>
   );

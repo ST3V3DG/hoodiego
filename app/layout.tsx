@@ -30,7 +30,7 @@ export default function RootLayout({
       lang="en"
       className={cn(
         "h-full",
-        "antialiased scroll-smooth",
+        "antialiased",
         inter.variable,
         ralewayHeading.variable,
       )}

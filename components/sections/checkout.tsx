@@ -18,6 +18,17 @@ export function Checkout() {
   const size = searchParams.get("size");
   const color = searchParams.get("color");
 
+  function getColorLabel(color: string) {
+    switch (color) {
+      case "#ff6c00":
+        return "Orange";
+      case "#000000":
+        return "Black";
+      default:
+        return color;
+    }
+  }
+
   const cartItems = [
     {
       name: "HoodieGo Premium Hoodie",
@@ -34,7 +45,7 @@ export function Checkout() {
   const total = subtotal + shipping;
 
   return (
-    <section className="py-32 px-6 bg-black text-white min-h-screen">
+    <section className="py-32 px-6 bg-background min-h-screen">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -67,7 +78,7 @@ export function Checkout() {
               transition={{ duration: 0.5 }}
             >
               <h2 className="text-2xl font-bold tracking-tight text-primary mb-8 flex items-center gap-3">
-                <span className="size-8 rounded-full bg-primary text-black flex items-center justify-center text-sm font-bold">
+                <span className="size-8 rounded-full bg-primary text-white dark:text-zinc-900 flex items-center justify-center text-sm font-bold">
                   1
                 </span>
                 Shipping Information
@@ -88,7 +99,7 @@ export function Checkout() {
                     <Input
                       id="firstName"
                       placeholder="John"
-                      className="bg-zinc-900 border-zinc-800 text-white placeholder:text-zinc-600 focus-visible:border-primary"
+                      className="dark:bg-zinc-900 dark:border-zinc-800 dark:text-white placeholder:text-zinc-600 focus-visible:border-primary"
                     />
                   </div>
                   <div className="space-y-2">
@@ -101,7 +112,7 @@ export function Checkout() {
                     <Input
                       id="lastName"
                       placeholder="Doe"
-                      className="bg-zinc-900 border-zinc-800 text-white placeholder:text-zinc-600 focus-visible:border-primary"
+                      className="dark:bg-zinc-900 dark:border-zinc-800 dark:text-white placeholder:text-zinc-600 focus-visible:border-primary"
                     />
                   </div>
                 </div>
@@ -117,7 +128,7 @@ export function Checkout() {
                     id="email"
                     type="email"
                     placeholder="john@example.com"
-                    className="bg-zinc-900 border-zinc-800 text-white placeholder:text-zinc-600 focus-visible:border-primary"
+                    className="dark:bg-zinc-900 dark:border-zinc-800 dark:text-white placeholder:text-zinc-600 focus-visible:border-primary"
                   />
                 </div>
 
@@ -131,7 +142,7 @@ export function Checkout() {
                   <Input
                     id="address"
                     placeholder="123 Main Street"
-                    className="bg-zinc-900 border-zinc-800 text-white placeholder:text-zinc-600 focus-visible:border-primary"
+                    className="dark:bg-zinc-900 dark:border-zinc-800 dark:text-white placeholder:text-zinc-600 focus-visible:border-primary"
                   />
                 </div>
 
@@ -146,7 +157,7 @@ export function Checkout() {
                     <Input
                       id="city"
                       placeholder="Douala"
-                      className="bg-zinc-900 border-zinc-800 text-white placeholder:text-zinc-600 focus-visible:border-primary"
+                      className="dark:bg-zinc-900 dark:border-zinc-800 dark:text-white placeholder:text-zinc-600 focus-visible:border-primary"
                     />
                   </div>
                   <div className="space-y-2">
@@ -159,7 +170,7 @@ export function Checkout() {
                     <Input
                       id="zip"
                       placeholder="BP 1234"
-                      className="bg-zinc-900 border-zinc-800 text-white placeholder:text-zinc-600 focus-visible:border-primary"
+                      className="dark:bg-zinc-900 dark:border-zinc-800 dark:text-white placeholder:text-zinc-600 focus-visible:border-primary"
                     />
                   </div>
                   <div className="space-y-2">
@@ -172,7 +183,7 @@ export function Checkout() {
                     <Input
                       id="country"
                       placeholder="Cameroon"
-                      className="bg-zinc-900 border-zinc-800 text-white placeholder:text-zinc-600 focus-visible:border-primary"
+                      className="dark:bg-zinc-900 dark:border-zinc-800 dark:text-white placeholder:text-zinc-600 focus-visible:border-primary"
                     />
                   </div>
                 </div>
@@ -186,7 +197,7 @@ export function Checkout() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <h2 className="text-2xl font-bold tracking-tight text-primary mb-8 flex items-center gap-3">
-                <span className="size-8 rounded-full bg-primary text-black flex items-center justify-center text-sm font-bold">
+                <span className="size-8 rounded-full bg-primary text-white dark:text-zinc-900 flex items-center justify-center text-sm font-bold">
                   2
                 </span>
                 Payment Method
@@ -194,7 +205,7 @@ export function Checkout() {
 
               <div className="space-y-4">
                 <label
-                  className="flex items-center gap-4 p-4 rounded-sm border border-border bg-zinc-900 cursor-pointer hover:border-primary transition-colors has-checked:border-primary has-checked:bg-primary/10"
+                  className="flex items-center gap-4 p-4 rounded-sm border border-border dark:bg-zinc-900 cursor-pointer hover:border-primary transition-colors has-checked:border-primary has-checked:bg-primary/20"
                   htmlFor="credit-card"
                 >
                   <Input
@@ -206,7 +217,7 @@ export function Checkout() {
                   />
                   <CreditCard className="size-5 text-primary" />
                   <div>
-                    <p className="text-sm font-medium text-white">
+                    <p className="text-sm font-medium text-primary dark:text-white">
                       Credit Card
                     </p>
                     <p className="text-xs text-zinc-400">
@@ -216,7 +227,7 @@ export function Checkout() {
                 </label>
 
                 <label
-                  className="flex items-center gap-4 p-4 rounded-sm border border-border bg-zinc-900 cursor-pointer hover:border-primary transition-colors has-checked:border-primary has-checked:bg-primary/10"
+                  className="flex items-center gap-4 p-4 rounded-sm border border-border dark:bg-zinc-900 cursor-pointer hover:border-primary transition-colors has-checked:border-primary has-checked:bg-primary/20"
                   htmlFor="mobile-money"
                 >
                   <Input
@@ -227,7 +238,7 @@ export function Checkout() {
                   />
                   <Landmark className="size-5 text-primary" />
                   <div>
-                    <p className="text-sm font-medium text-white">
+                    <p className="text-sm font-medium text-primary dark:text-white">
                       Mobile Money
                     </p>
                     <p className="text-xs text-zinc-400">
@@ -252,7 +263,7 @@ export function Checkout() {
               >
                 Place Order — {formatXAF(total)}
               </Button>
-              <p className="text-[10px] text-zinc-500 mt-3 text-center">
+              <p className="text-[10px] text-zinc-400 mt-3 text-center">
                 By placing this order, you agree to our Terms of Service and
                 Privacy Policy.
               </p>
@@ -265,7 +276,7 @@ export function Checkout() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="sticky top-32 bg-zinc-900/50 border border-border rounded-sm p-8 space-y-6"
+              className="sticky top-32 dark:bg-zinc-900/50 border border-border rounded-sm p-8 space-y-6"
             >
               <h2 className="text-lg font-bold tracking-tight text-primary">
                 Order Summary
@@ -273,7 +284,7 @@ export function Checkout() {
 
               {cartItems.map((item) => (
                 <div key={item.name} className="flex gap-4">
-                  <div className="relative size-20 shrink-0 overflow-hidden rounded-sm bg-zinc-800">
+                  <div className="relative size-20 shrink-0 overflow-hidden rounded-sm dark:bg-zinc-800">
                     <Image
                       src={item.image}
                       alt={item.name}
@@ -283,17 +294,17 @@ export function Checkout() {
                     />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-white truncate">
+                    <p className="text-sm font-medium dark:text-white truncate">
                       {item.name}
                     </p>
                     <p className="text-xs text-zinc-400 mt-1 uppercase">
-                      {color ?? "orange"} / {size ?? "l"}
+                      {getColorLabel(color ?? "#ff6c00")} / {size ?? "l"}
                     </p>
                     <p className="text-xs text-zinc-400">
-                      Qty: {parseInt(quantity ?? "1", 10)}
+                      Quantity: {parseInt(quantity ?? "1", 10)}
                     </p>
                   </div>
-                  <p className="text-sm font-medium text-white shrink-0">
+                  <p className="text-sm font-medium dark:text-white shrink-0">
                     {formatXAF(item.price * parseInt(quantity ?? "1", 10))}
                   </p>
                 </div>

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export function About() {
   return (
-    <section className="py-32 px-6 bg-black overflow-hidden text-white">
+    <section className="py-32 px-6 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-12 gap-12 items-end mb-24">
           <div className="lg:col-span-8">
@@ -27,7 +27,7 @@ export function About() {
             </h2>
           </div>
           <div className="lg:col-span-4 pb-4">
-            <p className="text-primary-foreground text-lg text-pretty leading-relaxed">
+            <p className="text-zinc-900 dark:text-primary-foreground text-lg text-pretty leading-relaxed">
               We specialize in creating hoodies that combine exceptional comfort
               and modern style, for garments that accompany you every day.
             </p>
@@ -52,7 +52,7 @@ export function About() {
               <h3 className="text-2xl font-bold mb-2 font-spaceGrotesk text-primary">
                 Premium Fabrics
               </h3>
-              <p className="text-zinc-400 text-sm leading-relaxed text-pretty">
+              <p className="text-zinc-900 text-sm leading-relaxed text-pretty">
                 Our approach starts with the best materials. Organic cotton,
                 soft fleece and careful finishes. We believe every hoodie should
                 be as comfortable as it is stylish.
@@ -65,7 +65,7 @@ export function About() {
               <h3 className="text-2xl font-bold mb-2 text-primary">
                 Urban Style
               </h3>
-              <p className="text-zinc-400 text-sm leading-relaxed text-pretty">
+              <p className="text-zinc-900 text-sm leading-relaxed text-pretty">
                 Streetwear is not just a style, it's a lifestyle. Every design
                 is thought to adapt to your everyday life and all your outfits.
               </p>

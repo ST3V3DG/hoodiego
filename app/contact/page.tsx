@@ -5,7 +5,7 @@ import { Contact } from "@/components/sections/contact";
 export default function Page() {
   return (
     <>
-      <Header />
+      <Header className="text-zinc-900" />
       <main>
         <Contact />
       </main>

@@ -3,7 +3,7 @@
 import { Minus, Plus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { parseAsInteger, parseAsString, useQueryState } from "nuqs";
+import { createSerializer, parseAsInteger, parseAsString, useQueryState } from "nuqs";
 import type { ReactNode } from "react";
 import { RadioColorSelector } from "@/components/radio-color-selector";
 import { RadioSizeSelector } from "@/components/radio-size-selector";
@@ -33,6 +33,12 @@ export default function OrderConfigPanel({
     "quantity",
     parseAsInteger.withDefault(1),
   );
+  const serializer = createSerializer({
+    color: parseAsString,
+    size: parseAsString,
+    quantity: parseAsInteger,
+  });
+  
   return (
     <Sheet>
       <SheetTrigger asChild>{children}</SheetTrigger>
@@ -56,7 +62,7 @@ export default function OrderConfigPanel({
           </figure>
           <div className="flex flex-col gap-4 p-4">
             <div className="space-y-1">
-              <h2 className="text-sm text-muted-foreground">Color</h2>
+              <h2 className="text-sm text-zinc-400">Color</h2>
               <div className="flex gap-4">
                 <RadioColorSelector
                   id="black"
@@ -79,7 +85,7 @@ export default function OrderConfigPanel({
               </div>
             </div>
             <div className="space-y-1">
-              <h2 className="text-sm text-muted-foreground">Size</h2>
+              <h2 className="text-sm text-zinc-400">Size</h2>
               <div className="flex gap-4">
                 <RadioSizeSelector
                   id="l"
@@ -112,7 +118,7 @@ export default function OrderConfigPanel({
             </div>
             <div className="space-y-1">
               <h2
-                className="text-sm text-muted-foreground"
+                className="text-sm text-zinc-400"
               >
                 Quantity Input
               </h2>
@@ -152,7 +158,7 @@ export default function OrderConfigPanel({
         </div>
         <SheetFooter>
           <Link
-            href={`/checkout?color=${color}&size=${size}&quantity=${quantity}`}
+            href={`/checkout${serializer({ color, size, quantity })}`}
           >
             <Button
               type="button"

@@ -31,7 +31,7 @@ const contactInfo = [
 
 export function Contact() {
   return (
-    <section className="py-32 px-6 bg-black text-white overflow-hidden min-h-screen flex items-center">
+    <section className="py-32 px-6 bg-background text-white overflow-hidden min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-24">
           <div className="lg:col-span-5 space-y-12">
@@ -54,7 +54,7 @@ export function Contact() {
                 Let&apos;s <br />
                 <span className="italic">talk</span>.
               </h2>
-              <p className="text-primary-foreground text-lg text-pretty leading-relaxed max-w-md">
+              <p className="dark:text-white text-zinc-900 text-lg text-pretty leading-relaxed max-w-md">
                 Have a question about our hoodies or your order? We&apos;d love
                 to hear from you. Drop us a message and we&apos;ll get back to
                 you as soon as possible.
@@ -81,7 +81,7 @@ export function Contact() {
                     <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">
                       {item.Label}
                     </p>
-                    <p className="text-sm font-medium text-primary-foreground group-hover:text-primary transition-colors">
+                    <p className="text-sm font-medium dark:text-white text-zinc-900 group-hover:text-primary transition-colors">
                       {item.value}
                     </p>
                   </div>
@@ -110,7 +110,7 @@ export function Contact() {
                   <Input
                     id="name"
                     placeholder="Your name"
-                    className="bg-zinc-900 border-zinc-800 text-white placeholder:text-zinc-600 focus-visible:border-primary"
+                    className="dark:bg-zinc-900 dark:border-zinc-800 dark:text-white placeholder:text-zinc-600 focus-visible:border-primary"
                   />
                 </div>
                 <div className="space-y-2">
@@ -124,7 +124,7 @@ export function Contact() {
                     id="email"
                     type="email"
                     placeholder="your@email.com"
-                    className="bg-zinc-900 border-zinc-800 text-white placeholder:text-zinc-600 focus-visible:border-primary"
+                    className="dark:bg-zinc-900 dark:border-zinc-800 dark:text-white placeholder:text-zinc-600 focus-visible:border-primary"
                   />
                 </div>
               </div>
@@ -139,7 +139,7 @@ export function Contact() {
                 <Input
                   id="subject"
                   placeholder="How can we help you?"
-                  className="bg-zinc-900 border-zinc-800 text-white placeholder:text-zinc-600 focus-visible:border-primary"
+                  className="dark:bg-zinc-900 dark:border-zinc-800 dark:text-white placeholder:text-zinc-600 focus-visible:border-primary"
                 />
               </div>
 
@@ -153,14 +153,14 @@ export function Contact() {
                 <Textarea
                   id="message"
                   placeholder="Tell us more about your inquiry..."
-                  className="bg-zinc-900 border-zinc-800 text-white placeholder:text-zinc-600 focus-visible:border-primary"
+                  className="dark:bg-zinc-900 dark:border-zinc-800 dark:text-white placeholder:text-zinc-600 focus-visible:border-primary"
                 />
               </div>
 
               <Button
                 type="submit"
                 size="lg"
-                className="w-full sm:w-auto text-xs font-bold uppercase tracking-[0.2em] px-8 rounded-sm"
+                className="w-full sm:w-auto text-xs font-bold uppercase tracking-[0.2em] px-8 rounded-full"
               >
                 Send Message
               </Button>

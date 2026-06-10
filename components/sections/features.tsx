@@ -52,7 +52,7 @@ const features: FeatureType[] = [
 
 export function Features() {
   return (
-    <section className="py-32 bg-black px-6 relative min-h-screen">
+    <section className="py-32 bg-background px-6 relative min-h-screen">
       {/*<div className="absolute bottom-0 left-0 right-0 top-0 bg-[repeating-linear-gradient(45deg,#f3f3f3_0px_1px,transparent_1px_50px)] mask-[radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>*/}
 
       <div className="max-w-7xl mx-auto text-center">
@@ -65,7 +65,7 @@ export function Features() {
           <h2 className="text-6xl md:text-7xl font-bold tracking-tight text-primary mb-6 text-balance">
             Why choose our hoodies?
           </h2>
-          <p className="text-lg text-primary-foreground max-w-2xl mx-auto mb-20 text-pretty">
+          <p className="text-base dark:text-white text-zinc-900 max-w-xl mx-auto mb-20 text-pretty">
             Discover what makes our hoodies unique. Quality, comfort and style
             for your everyday wardrobe.
           </p>
@@ -102,7 +102,7 @@ function FeatureCard({ icon: Icon, title, desc, highlight }: FeatureType) {
           "size-12 rounded-full flex items-center justify-center mb-6 transition-colors duration-200",
           highlight
             ? "bg-primary text-white shadow-xl shadow-primary"
-            : "bg-secondary text-primary group-hover:bg-accent",
+            : "bg-secondary dark:bg-white text-primary group-hover:bg-accent",
         )}
       >
         <Icon className="size-6" />
@@ -110,7 +110,7 @@ function FeatureCard({ icon: Icon, title, desc, highlight }: FeatureType) {
       <h3 className="text-xl font-bold mb-3 text-primary tracking-tight">
         {title}
       </h3>
-      <p className="text-primary-foreground leading-relaxed text-sm max-w-xs mx-auto text-pretty">
+      <p className="dark:text-white text-zinc-900 leading-relaxed text-sm max-w-xs mx-auto text-pretty">
         {desc}
       </p>
     </div>

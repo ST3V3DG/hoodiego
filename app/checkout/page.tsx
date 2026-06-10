@@ -5,7 +5,7 @@ import { Checkout } from "@/components/sections/checkout";
 export default function Page() {
   return (
     <>
-      <Header />
+      <Header className="text-zinc-900" />
       <main>
         <Checkout />
       </main>

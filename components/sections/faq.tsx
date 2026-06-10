@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 
 import { Accordeon, AccordeonItem } from "@/components/accordeon";
+import { Badge } from "@/components/ui/badge";
 
 const faq = [
   {
@@ -33,7 +34,7 @@ const faq = [
 
 export function FAQ() {
   return (
-    <section className="px-6 py-32 text-white bg-black min-h-screen">
+    <section className="px-6 py-32 bg-background min-h-screen">
       <div className="mx-auto max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,13 +43,13 @@ export function FAQ() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="mb-16 text-center"
         >
-          <span className="inline-flex px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-400 border border-zinc-800 rounded-full bg-zinc-900/50">
+          <Badge className="p-4 uppercase tracking-[0.2em] text-zinc-400 border border-zinc-800 rounded-full bg-background">
             FAQ
-          </span>
+          </Badge>
           <h2 className="mt-6 text-5xl md:text-6xl font-bold tracking-tight text-balance leading-none text-primary">
             Des questions&nbsp;?
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base text-zinc-400 text-pretty">
+          <p className="mx-auto mt-4 max-w-xl text-base dark:text-zinc-400 text-zinc-900 text-pretty">
             Retrouvez les réponses aux questions les plus fréquentes.
           </p>
         </motion.div>
