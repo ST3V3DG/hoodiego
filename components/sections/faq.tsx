@@ -49,7 +49,7 @@ export function FAQ() {
           <h2 className="mt-6 text-5xl md:text-6xl font-bold tracking-tight text-balance leading-none text-primary">
             Des questions&nbsp;?
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base dark:text-zinc-400 text-zinc-900 text-pretty">
+          <p className="mx-auto mt-4 max-w-xl text-base dark:text-white text-zinc-900 text-pretty">
             Retrouvez les réponses aux questions les plus fréquentes.
           </p>
         </motion.div>

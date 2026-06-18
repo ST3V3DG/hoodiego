@@ -37,7 +37,7 @@ export function AccordeonItem({
     >
       <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-sm font-medium dark:text-primary transition-colors hover:text-primary/80 group-open:text-primary">
         {title}
-        <ChevronDown className="size-4 shrink-0 text-zinc-500 transition-transform duration-200 group-open:rotate-180" />
+        <ChevronDown className="size-4 shrink-0 dark:text-zinc-500 text-zinc-800 transition-transform duration-200 group-open:rotate-180" />
       </summary>
       <p className="px-5 pb-4 text-sm leading-relaxed text-zinc-900/80 dark:text-white">
         {children}

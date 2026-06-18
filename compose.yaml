@@ -1,0 +1,13 @@
+services:
+  hoodiego:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      image: hoodiego
+      container_name: hoodiego
+      environment:
+        NODE_ENV: production
+        PORT: "3000"
+      ports:
+        - "3000:3000"
+      restart: unless-stopped

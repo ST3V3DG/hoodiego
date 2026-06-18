@@ -2,12 +2,12 @@
 
 import { ChevronDown } from "lucide-react";
 import { motion } from "motion/react";
-import { type Product2, ProductCard2 } from "@/components/product-card-2";
+import { type Product, ProductCard } from "@/components/product-card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-const products: Product2[] = [
+const products: Product[] = [
   {
     title: "Classic Black Hoodie",
     image: "/images/hoodie.webp",
@@ -167,7 +167,7 @@ export function Collections() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
             >
-              <ProductCard2 product={product} />
+              <ProductCard product={product} />
             </motion.div>
           ))}
         </div>

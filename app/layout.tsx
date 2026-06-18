@@ -29,8 +29,7 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       lang="en"
       className={cn(
-        "h-full",
-        "antialiased",
+        "h-full dark antialiased",
         inter.variable,
         ralewayHeading.variable,
       )}

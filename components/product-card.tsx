@@ -1,39 +1,83 @@
+import { Star } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
-import { Badge } from "./ui/badge";
+import { RadioColorSelector } from "@/components/radio-color-selector";
+import type { categories } from "@/components/sections/collections";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
+import { formatXAF } from "@/lib/utils";
 
-const product = {
-  title: "White T-Shirt",
-  image: "/images/hoodie.webp",
-  price: "$29.99",
-  badge: "New Season",
+export type Product = {
+  title: string;
+  image: string;
+  price: number;
+  badge: string;
+  rating: number;
+  type: (typeof categories)[number];
+  colors?: string[];
 };
-
-export type Product = typeof product;
 
 export function ProductCard({ product }: { product: Product }) {
   return (
-    <Link href="#" className="group">
-      <figure className="relative aspect-square w-full overflow-hidden rounded-md object-cover">
-        <Image
-          fill
-          className="object-cover transition-transform duration-300 group-hover:scale-105 group-hover:rotate-2"
-          src={product.image}
-          alt={product.title}
-          width={400}
-          height={400}
-        />
-        <Badge
-          variant="secondary"
-          className="absolute inset-e-2 top-2 bg-white/30 dark:bg-black/30"
-        >
-          {product.badge}
-        </Badge>
-      </figure>
-      <div className="mt-3 space-y-0.5">
-        <p className="font-medium">{product.title}</p>
-        <p className="text-zinc-400">{product.price}</p>
-      </div>
-    </Link>
+    <Card className="group bg-transparent ring-0 p-0">
+      <CardHeader className="sr-only">{product.title}</CardHeader>
+      <CardContent className="p-0">
+        <figure className="relative aspect-square w-full overflow-hidden rounded-sm object-cover">
+          <Image
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105 group-hover:rotate-2"
+            src={product.image}
+            alt={product.title}
+          />
+          <Badge
+            variant="secondary"
+            className="absolute inset-e-2 top-2 bg-white/30 text-white rounded-full"
+          >
+            {product.badge}
+          </Badge>
+          <div className="absolute inset-s-3 bottom-3 flex items-center justify-between gap-2">
+            {product.colors?.map((color, _) => (
+              <RadioColorSelector
+                key={`${product.title.toLowerCase()}-${color}`}
+                className="size-6"
+                id={`${product.title.toLowerCase()}-${color}`}
+                name={product.title.toLowerCase().replace(/\s+/g, "-")}
+                color={color}
+                label={`${product.title.toLowerCase()}-${color}`}
+              />
+            ))}
+          </div>
+        </figure>
+        <div className="mt-4 space-y-2">
+          <div className="flex items-center justify-between gap-1">
+            <p className="font-medium">{product.title}</p>
+            <p className="text-zinc-400">{formatXAF(product.price)}</p>
+          </div>
+          <div className="flex items-center gap-1">
+            {Array(5)
+              .fill("")
+              .map((_, index) =>
+                index < product.rating ? (
+                  <Star
+                    key={index}
+                    className="size-4 fill-amber-500 text-amber-500"
+                  />
+                ) : (
+                  <Star key={index} className="text-zinc-400 size-4" />
+                ),
+              )}
+            <span className="text-zinc-400 ms-1 text-xs">(4.5 out of 5)</span>
+          </div>
+        </div>
+      </CardContent>
+      <CardFooter className="p-0 border-0">
+        <Button className="mt-4 w-full rounded-full">Add to Cart</Button>
+      </CardFooter>
+    </Card>
   );
 }

@@ -54,7 +54,7 @@ export default function OrderConfigPanel({
           </SheetTitle>
           <SheetDescription>what will fit your need?</SheetDescription>
         </SheetHeader>
-        <div className="grow flex flex-col gap-6 overflow-y-scroll">
+        <div className="grow flex flex-col gap-6 overflow-y-scroll scrollbar-none">
           <figure className="flex flex-col h-3/4 px-4">
             <Image
               src="/images/hoodie.webp"

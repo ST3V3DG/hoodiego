@@ -38,7 +38,7 @@ export default function Hero() {
           <div className="grid grid-cols-1 md:grid-cols-3 items-end gap-8">
             {/* Bottom Left Info */}
             <div className="max-w-70">
-              <h3 className="text-xl font-bold mb-4 leading-tight">
+              <h3 className="text-xl font-bold mb-6 leading-tight">
                 Your
                 <br />
                 comfort

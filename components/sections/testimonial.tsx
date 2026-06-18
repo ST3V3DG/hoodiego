@@ -54,7 +54,7 @@ export function Testimonials() {
         <h2 className="text-6xl md:text-7xl font-bold tracking-tight text-primary mb-4">
           They Trust Us
         </h2>
-        <p className="text-base text-zinc-900 max-w-xl mx-auto">
+        <p className="text-base text-zinc-900 dark:text-white max-w-xl mx-auto">
           Discover what our customers say about their HoodieGo hoodies
         </p>
       </div>
