@@ -93,7 +93,7 @@ function FeatureCard({ icon: Icon, title, desc, highlight }: FeatureType) {
   return (
     <div
       className={cn(
-        "flex flex-col items-center group bg-primary/20 border rounded-sm border-primary shadow-lg hover:shadow-xl transition-all duration-300 p-4",
+        "flex flex-col items-center group bg-primary/5 border rounded-sm border-primary shadow-lg hover:shadow-xl transition-all duration-300 p-4",
         highlight && "md:scale-105",
       )}
     >
